@@ -1,1 +1,7 @@
-<h1>TODO: contacts page</h1>
+<div>
+
+  <input [(ngModel)]="query" (ngModelChange)="search()" type="text" name="contacts-query" />
+
+  <pre>{{contacts | json}}</pre>
+
+</div>

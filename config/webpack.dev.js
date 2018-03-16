@@ -5,14 +5,14 @@ var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
-const API_URL = 'https://api.staging.triprepublic.com/api/v1/';
+const API_URL = 'http://localhost:3000';
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'cheap-module-eval-source-map',
 
   output: {
     path: helpers.root('dist'),
-    publicPath: 'http://partner.test:8080/',
+    publicPath: 'http://localhost:8080/',
     filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   },
@@ -28,8 +28,8 @@ module.exports = webpackMerge(commonConfig, {
   ],
 
   devServer: {
-    host: 'partner.test',
     historyApiFallback: true,
     stats: 'minimal'
   }
+
 });

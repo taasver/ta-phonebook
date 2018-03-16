@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }  from './app.component';
 import { ContactsComponent }  from './contacts/contacts.component';
+import { ContactsService } from './contacts/contacts.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ContactsComponent }  from './contacts/contacts.component';
     HttpModule,
     AppRoutingModule
   ],
+  providers: [ ContactsService ],
   declarations: [
     AppComponent,
     ContactsComponent

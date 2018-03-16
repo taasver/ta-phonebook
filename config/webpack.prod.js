@@ -5,7 +5,7 @@ var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
-const API_URL = 'https://api.triprepublic.com/api/v1/';
+const API_URL = 'http://localhost:3000'; // TODO: replace with real API url
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',

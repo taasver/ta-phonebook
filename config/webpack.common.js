@@ -4,6 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
+
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
@@ -69,4 +70,5 @@ module.exports = {
       favicon: 'src/favicon.ico'
     })
   ]
+
 };
