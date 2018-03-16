@@ -1,0 +1,8 @@
+// ===========================================================
+// VISIBLITY TOGGLE CLASSES
+// ===========================================================
+.hidden { display: none; }
+.hidden-xs { @media (max-width: $xs - 1) { display: none; } }
+.hidden-sm { @media (max-width: $sm - 1) { display: none; } }
+.visible-xs { @media (min-width: $xs) { display: none; } }
+.visible-sm { @media (min-width: $sm) { display: none; } }

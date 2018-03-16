@@ -1,0 +1,59 @@
+// ===========================================================
+// INPUT STYLES
+// ===========================================================
+.input-simple {
+  outline: 0;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  box-shadow: none;
+  &--min-200 { min-width: 200px; }
+}
+.input-color-sample {
+  border: solid 1px #ddd;
+  width: 20px;
+  height: 20px;
+  top: 1px;
+}
+.id-input {
+  &__label {
+    z-index: 2;
+    padding: 6px 10px;
+    color: #aaa;
+  }
+  &__input {
+    padding: 22px 10px 6px;
+  }
+  &__icon {
+    padding: 8px;
+    margin: 4px 4px 0 0;
+  }
+}
+.id-select {
+  @include transition(all 0.2s ease);
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 6px 10px;
+  &__label {
+    @include transition(all 0.2s ease);
+    color: #aaa;
+    line-height: 1.4;
+  }
+  &__selected {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &:hover {
+    color: #fff;
+    background-color: $brand-primary-lighter;
+    .id-select__label { color: #fff; }
+  }
+  &__input {
+    border: none;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    z-index: 2;
+  }
+}
