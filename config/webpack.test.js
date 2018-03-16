@@ -2,7 +2,6 @@ var webpack = require('webpack');
 var helpers = require('./helpers');
 
 module.exports = {
-  mode: 'development',
   devtool: 'inline-source-map',
 
   resolve: {
@@ -13,7 +12,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: ['ts-loader', 'angular2-template-loader']
+        use: ['awesome-typescript-loader', 'angular2-template-loader']
       },
       {
         test: /\.html$/,

@@ -18,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: ['ts-loader', 'angular2-template-loader']
+        use: ['awesome-typescript-loader', 'angular2-template-loader']
       },
       {
         test: /\.html$/,
@@ -61,6 +61,9 @@ module.exports = {
       /(.+)?angular(\\|\/)core(.+)?/,
       helpers.root('./src')
     ),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['app', 'vendor', 'polyfills']
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       favicon: 'src/favicon.ico'

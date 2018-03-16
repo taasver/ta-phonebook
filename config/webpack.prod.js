@@ -8,7 +8,7 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const API_URL = 'https://api.triprepublic.com/api/v1/';
 
 module.exports = webpackMerge(commonConfig, {
-  mode: 'production',
+  devtool: 'source-map',
 
   output: {
     path: helpers.root('dist'),
@@ -18,6 +18,13 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   plugins: [
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
+      comments: false,
+      mangle: {
+        keep_fnames: true
+      }
+    }),
     new ExtractTextPlugin({
       filename: '[name].[hash].css'
     }),

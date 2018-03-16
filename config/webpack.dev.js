@@ -8,7 +8,6 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 const API_URL = 'https://api.staging.triprepublic.com/api/v1/';
 
 module.exports = webpackMerge(commonConfig, {
-  mode: 'development',
   devtool: 'cheap-module-eval-source-map',
 
   output: {
