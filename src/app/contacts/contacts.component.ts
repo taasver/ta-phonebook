@@ -7,23 +7,25 @@ import { ContactsService } from './contacts.service';
 })
 export class ContactsComponent implements OnInit {
   query: string = ''; // search input text
-  contacts: any[] = [];
+  private contacts: any[] = []; // full list of contacts
+  filteredContacts: any[] = []; // list that will be displayed
 
   constructor(private contactsService: ContactsService) {}
 
   ngOnInit() {
-    this.search();
-  }
-
-  search() {
-    this.contactsService.getContacts(this.query).subscribe(data => {
-
+    this.contactsService.getContacts().subscribe(data => {
       this.contacts = data;
-
+      this.filteredContacts = this.contacts; // display all by default
     }, error => {
 
       console.log(error.json());
 
+    });
+  }
+
+  search() {
+    this.filteredContacts = this.contacts.filter(contact => {
+      return contact.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1; // case insensitive search from names
     });
   }
 

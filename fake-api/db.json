@@ -1,5 +1,19 @@
 {
   "contacts": [
-    { "id": 1, "name": "John Smith" }
+    {
+      "name": "Michael Knight",
+      "photo": "https://i.pinimg.com/originals/db/cb/ce/dbcbced16c890394339919a287612e3e.jpg",
+      "phone": "450-3232-223-44"
+    },
+    {
+      "name": "Hannibal Smith",
+      "photo": "https://yt3.ggpht.com/a-/AJLlDp3n18IftdS39-9QXqOwZv53cnzfkQlT1Te4ag=s900-mo-c-c0xffffffff-rj-k-no",
+      "phone": "342-234-842"
+    },
+    {
+      "name": "B. A. Baracus",
+      "photo": "http://s3.media.squarespace.com/production/465215/5307116/wp-content/uploads/2009/07/ba-point21-279x263-custom.jpg",
+      "phone": "342-234-843"
+    }
   ]
 }

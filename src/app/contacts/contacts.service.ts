@@ -9,9 +9,8 @@ export class ContactsService {
 
   constructor(private http: Http) {}
 
-  getContacts = (query?: string): Observable<any> => {
+  getContacts = (): Observable<any> => {
     let url = `${process.env.API_URL}/contacts`;
-    if (query) { url += `?q=${query}`; }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.get(url, {headers: headers})

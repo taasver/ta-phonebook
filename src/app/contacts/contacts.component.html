@@ -1,7 +1,10 @@
-<div>
+<div class="text-center padding-10">
 
-  <input [(ngModel)]="query" (ngModelChange)="search()" type="text" name="contacts-query" />
+  <input [(ngModel)]="query" (ngModelChange)="search()" type="text" name="contacts-query"
+         class="input-simple full-width padding-10" />
 
-  <pre>{{contacts | json}}</pre>
+  <div *ngFor="let contact of filteredContacts" class="padding-10">
+    <div>{{contact.name}}</div>
+  </div>
 
 </div>
