@@ -13,8 +13,7 @@ export class ContactsService {
     let url = `${process.env.API_URL}/contacts?_sort=name`;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get(url, {headers: headers})
-           .map(response => response.json());
+    return this.http.get(url, {headers: headers}).map(response => response.json());
   }
 
 }

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ContactsService } from './contacts.service';
+import { Contact } from './contact';
 
 @Component({
   templateUrl: './contacts.component.html'
 })
 export class ContactsComponent implements OnInit {
   query: string = ''; // search input text
-  private contacts: any[] = []; // full list of contacts
-  filteredContacts: any[] = []; // list that will be displayed
+  private contacts: Contact[] = []; // full list of contacts
+  filteredContacts: Contact[] = []; // list that will be displayed
   isLoading: boolean = true;
   isError: boolean = false;
 
@@ -27,7 +28,7 @@ export class ContactsComponent implements OnInit {
 
   // Filter all contacts based on query string. Search from names and numbers
   search() {
-    this.filteredContacts = this.contacts.filter(contact => {
+    this.filteredContacts = this.contacts.filter((contact: Contact) => {
       return contact.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1 || // case insensitive
              contact.phone.indexOf(this.query) > -1; 
     });
