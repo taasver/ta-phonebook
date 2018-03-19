@@ -23,9 +23,11 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  // Filter all contacts based on query string. Search from names and numbers
   search() {
     this.filteredContacts = this.contacts.filter(contact => {
-      return contact.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1; // case insensitive search from names
+      return contact.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1 || // case insensitive
+             contact.phone.indexOf(this.query) > -1; 
     });
   }
 
