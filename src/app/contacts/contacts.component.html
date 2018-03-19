@@ -17,22 +17,35 @@
     </div>
   </div>
 
-  <!-- RESULTS -->
+  <!-- CONTACTS CONTAINER -->
   <div class="contacts">
+
+    <!-- RESULT COUNT -->
+    <div *ngIf="query && filteredContacts.length" class="padding-5 gray-bg">
+      Found {{filteredContacts.length}} contact{{filteredContacts.length === 1 ? '' : 's'}}
+    </div>
+
+    <!-- NOTHING FOUND -->
+    <div *ngIf="query && !filteredContacts.length" class="padding-20">
+      No matching contacts found
+    </div>
+
+    <!-- RESULTS -->
     <div *ngFor="let contact of filteredContacts" class="contact d-table full-width padding-5 text-left">
       <div [ngStyle]="{'background-image': 'url(' + contact.photo + ')'}"
            class="contact__photo d-table-cell v-middle">
       </div>
       <div class="contact__text d-table-cell v-middle">{{contact.name}}</div>
     </div>
-  </div>
 
-  <!-- LOADER -->
-  <i *ngIf="isLoading" class="fa fa-2x fa-spin fa-spinner faded padding-20" aria-hidden="true"></i>
+    <!-- LOADER -->
+    <i *ngIf="isLoading" class="fa fa-2x fa-spin fa-spinner faded padding-20" aria-hidden="true"></i>
 
-  <!-- ERROR -->
-  <div *ngIf="isError" class="padding-20">
-    Oops! Something went wrong..
+    <!-- ERROR -->
+    <div *ngIf="isError" class="padding-20">
+      Oops! Something went wrong..
+    </div>
+
   </div>
 
 </div>
