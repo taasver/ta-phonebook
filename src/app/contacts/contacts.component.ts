@@ -9,17 +9,19 @@ export class ContactsComponent implements OnInit {
   query: string = ''; // search input text
   private contacts: any[] = []; // full list of contacts
   filteredContacts: any[] = []; // list that will be displayed
+  isLoading: boolean = true;
+  isError: boolean = false;
 
   constructor(private contactsService: ContactsService) {}
 
   ngOnInit() {
     this.contactsService.getContacts().subscribe(data => {
+      this.isLoading = false;
       this.contacts = data;
       this.filteredContacts = this.contacts; // display all by default
     }, error => {
-
-      console.log(error.json());
-
+      this.isLoading = false;
+      this.isError = true;
     });
   }
 
@@ -31,7 +33,7 @@ export class ContactsComponent implements OnInit {
     });
   }
 
-  clearDestination = () => {
+  clearQuery = () => {
     this.query = '';
     this.search();
   }
