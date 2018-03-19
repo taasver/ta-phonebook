@@ -2,13 +2,13 @@
 // LIST OF CONTACTS COMPONENT STYLES
 // ===========================================================
 .contacts-header {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid $gray;
 }
 .contacts {
   padding-top: 62px; // height of the fixed search input area
 }
 .contact {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $gray;
   &__photo {
     height: 50px;
     width: 50px;
