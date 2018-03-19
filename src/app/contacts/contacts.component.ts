@@ -29,4 +29,9 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  clearDestination = () => {
+    this.query = '';
+    this.search();
+  }
+
 }

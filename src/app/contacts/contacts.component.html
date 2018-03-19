@@ -1,10 +1,30 @@
-<div class="text-center padding-10">
+<div class="text-center">
 
-  <input [(ngModel)]="query" (ngModelChange)="search()" type="text" name="contacts-query"
-         class="input-simple full-width padding-10" />
+  <!-- SEARCH INPUT -->
+  <div class="contacts-header pos-fix full-width white-bg padding-10">
+    <div class="pos-rel">
+      <label for="contacts-query" class="pos-abs left-0 z-1 font-18 cursor-pointer brand-primary">
+        <i class="input-simple__icon fa fa-search white-bg" aria-hidden="true">
+        </i>
+      </label>
+      <div class="pos-abs right-0 z-1 font-18 cursor-pointer brand-primary">
+        <i *ngIf="query.length" (click)="clearDestination()"
+           class="input-simple__clear fa fa-times white-bg" aria-hidden="true">
+        </i>
+      </div>
+      <input [(ngModel)]="query" (ngModelChange)="search()" type="text" id="contacts-query" name="contacts-query"
+             class="input-simple input-simple--with-icon full-width padding-10" placeholder="Search for a contact.." />
+    </div>
+  </div>
 
-  <div *ngFor="let contact of filteredContacts" class="padding-10">
-    <div>{{contact.name}}</div>
+  <!-- RESULTS -->
+  <div class="contacts">
+    <div *ngFor="let contact of filteredContacts" class="contact d-table full-width padding-5 text-left">
+      <div [ngStyle]="{'background-image': 'url(' + contact.photo + ')'}"
+           class="contact__photo d-table-cell v-middle">
+      </div>
+      <div class="contact__text d-table-cell v-middle">{{contact.name}}</div>
+    </div>
   </div>
 
 </div>

@@ -6,13 +6,19 @@
   border: 1px solid #ddd;
   border-radius: 2px;
   box-shadow: none;
-  &--min-200 { min-width: 200px; }
-}
-.input-color-sample {
-  border: solid 1px #ddd;
-  width: 20px;
-  height: 20px;
-  top: 1px;
+  &--with-icon {
+    padding-left: 38px;
+  }
+  &__icon {
+    padding: 8px;
+    margin: 4px;
+  }
+  &__clear {
+    @include transition(all 0.2s ease);
+    padding: 8px;
+    margin: 4px;
+    &:hover { color: $red; }
+  }
 }
 .id-input {
   &__label {
