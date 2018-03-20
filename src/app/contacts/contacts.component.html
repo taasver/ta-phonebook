@@ -2,7 +2,7 @@
 
   <!-- SEARCH INPUT -->
   <div class="contacts-header pos-fix full-width white-bg padding-10">
-    <div class="pos-rel">
+    <div class="contacts-header__search-field inline-block full-width pos-rel">
       <label for="contacts-query" class="pos-abs left-0 z-1 font-18 cursor-pointer brand-primary">
         <i class="input-simple__icon fa fa-search white-bg" aria-hidden="true">
         </i>
@@ -18,7 +18,7 @@
   </div>
 
   <!-- CONTACTS CONTAINER -->
-  <div class="contacts">
+  <div class="contacts-page">
 
     <!-- RESULT COUNT -->
     <div *ngIf="query && filteredContacts.length" class="padding-5 gray-bg">
@@ -31,11 +31,23 @@
     </div>
 
     <!-- RESULTS -->
-    <div *ngFor="let contact of filteredContacts" class="contact d-table full-width padding-5 text-left">
-      <div [ngStyle]="{'background-image': 'url(' + contact.photo + ')'}"
-           class="contact__photo d-table-cell v-middle">
+    <div class="contacts container">
+
+
+
+      <div *ngFor="let contact of filteredContacts" class="contact-container">
+
+        <div class="contact d-table full-width full-height padding-5 text-left o-hidden cursor-pointer">
+          <div [ngStyle]="{'background-image': 'url(' + contact.photo + ')'}"
+               class="contact__photo d-table-cell v-middle">
+          </div>
+          <div class="contact__text d-table-cell v-middle">{{contact.name}}</div>
+        </div>
+
       </div>
-      <div class="contact__text d-table-cell v-middle">{{contact.name}}</div>
+
+
+
     </div>
 
     <!-- LOADER -->
