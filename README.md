@@ -19,4 +19,5 @@ With bigger data sets it would be necessary to implement lazy-loading/pagination
 ## Further improvements
 The following list will not be implemented within the scope of this take home test
 * Detailed page with visible phone nr etc.
+* Maybe some animations for contacts when search is used and list items change
 * Deployment for staging/production
