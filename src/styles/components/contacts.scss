@@ -26,6 +26,7 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    background-color: $gray; // fallback and will be visible while photo is loading
     background-size: cover;
     background-position: center center;
   }
