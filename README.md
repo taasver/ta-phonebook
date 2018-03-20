@@ -15,3 +15,8 @@
 My app is developed with the assumption that there will not be huge amount of contacts.
 This is why my frontend does only 1 query to the API, stores the list and searches are made in the frontend.
 With bigger data sets it would be necessary to implement lazy-loading/pagination and search functionality on the backend.
+
+## Further improvements
+The following list will not be implemented within the scope of this take home test
+* Detailed page with visible phone nr etc.
+* Deployment for staging/production
