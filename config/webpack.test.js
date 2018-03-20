@@ -1,6 +1,9 @@
 var webpack = require('webpack');
 var helpers = require('./helpers');
 
+const ENV = process.env.NODE_ENV = process.env.ENV = 'test';
+const API_URL = 'http://test.test';
+
 module.exports = {
   devtool: 'inline-source-map',
 
@@ -36,6 +39,12 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'ENV': JSON.stringify(ENV),
+        'API_URL': JSON.stringify(API_URL)
+      }
+    }),
     // Workaround for angular/angular#11580
     new webpack.ContextReplacementPlugin(
       /(.+)?angular(\\|\/)core(.+)?/,

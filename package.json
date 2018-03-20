@@ -10,6 +10,7 @@
     "start-dev-server": "webpack-dev-server --config config/webpack.dev.js --inline --progress --open --port 8080",
     "start": "concurrently --kill-others \"npm run start-fake-api\" \"npm run start-dev-server\"",
     "test": "karma start",
+    "starttest": "karma start --auto-watch --no-single-run",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "dependencies": {
