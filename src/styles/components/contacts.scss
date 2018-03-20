@@ -17,11 +17,11 @@
     height: 200px;
   }
   @media (min-width: $sm) { width: 20%; }
+  @media (min-width: $md) { width: 16%; }
 }
 .contact {
   @include transition(all 0.2s ease);
   border-bottom: 1px solid $gray;
-  &:hover { box-shadow: 2px 4px 8px $gray; }
   &__photo {
     height: 50px;
     width: 50px;
@@ -31,12 +31,14 @@
   }
   &__text { padding-left: 10px; }
   @media (min-width: $xs) {
-    border: 1px solid $gray;
+    border: 0;
     padding: 0;
     border-radius: 2px;
     display: inline-block; // fallback if flex is not supported
     display: flex;
     flex-flow: column;
+    box-shadow: 0 2px 4px #aaa;
+    &:hover { box-shadow: 2px 4px 8px #aaa; }
     &__photo {
       display: block;
       width: 100%;
@@ -45,7 +47,7 @@
     }
     &__text {
       display: block;
-      padding: 5px;
+      padding: 5px 10px;
       text-align: center;
       flex: 0 0 auto;
     }
